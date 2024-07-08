@@ -1,21 +1,6 @@
 
 class J1482 {
-    // class AList<T> {
-    //     T listOfThings[];
-    //     int numOfThings;
-    //     AList(T thing) {
-    //         listOfThings[0] = thing;
-    //         numOfThings++;
-    //     }
-    //     public void add(T thing) {
-    //         if(listOfThings.length == numOfThings) {
-    //             int[] x = new int[listOfThings.length*2];
-    //             listOfThings = 
-    //             numOfThings++;
-    //         }
-    //     }
-        
-    // }
+
 
 
 
