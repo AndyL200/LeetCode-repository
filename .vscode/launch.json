@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "J11",
+            "request": "launch",
+            "mainClass": "J11",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
+        {
+            "type": "java",
+            "name": "J1482",
+            "request": "launch",
+            "mainClass": "J1482",
+            "projectName": "LeetCode-repository_e53c3d64"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+haystack AAAXAAAX 
+needle = AAAA
+
+KMP algorithm promotes efficiency
+No need to check values that you already know are there
+
+Preprocessing
+Using an LPS - an array of the same size as your "needle"/pattern string
+first position always 0
+
+LPS for AAAA
+[0,1,2,3] first 3 match last 3
+
+String AAB
+Prefix A AA AAB
+Suffix B BA BAA
+
+if PrevLPS is 0 and you have a mismatch, the next index should have a value of 0
+if there is a mistach but PrevLPS is not 0 : PrevLPS = lps[PrevLPS - 1] (i does not get incremented because the previous proper prefixes must be checked with the new value until PrevLPS = 0)
+then you can increment and start checking once more
+ensures that patterns can be checked off mismatch or nested patterns can be matched 
+PrevLPS is a pointer for the indexes of the lps array
+this means that PrevLPS will be 0 when it walks back down the lps array
+
+Searching through the haystack 
+on mismatch
+position of lps at last matching index (j-1)
+that value gives the longest prefix suffix 
+if that value is 2, you know that the first two match the current character
+Go to the index of lps[j-1] in the needle string
+the i pointer on the haystack stays the same because you know they match
+search from needle[lps[j-1]] 
+shift window 
+
+AAAXAAAX
+AAAA
+
+
+if j = 0 i++
