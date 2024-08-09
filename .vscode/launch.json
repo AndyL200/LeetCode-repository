@@ -4,8 +4,48 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-        
+        {
+            "type": "java",
+            "name": "J8",
+            "request": "launch",
+            "mainClass": "J8",
+            "projectName": "LeetCode-repository_9fc34ff6"
+        },
+        {
+            "type": "java",
+            "name": "neetcodeIntQuestion",
+            "request": "launch",
+            "mainClass": "neetcodeIntQuestion",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
+        {
+            "type": "java",
+            "name": "J45",
+            "request": "launch",
+            "mainClass": "J45",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
+        {
+            "type": "java",
+            "name": "J27",
+            "request": "launch",
+            "mainClass": "J27",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
+        {
+            "type": "java",
+            "name": "J88",
+            "request": "launch",
+            "mainClass": "J88",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
+        {
+            "type": "java",
+            "name": "J605",
+            "request": "launch",
+            "mainClass": "J605",
+            "projectName": "LeetCode-repository_e53c3d64"
+        },
         {
             "type": "java",
             "name": "Current File",

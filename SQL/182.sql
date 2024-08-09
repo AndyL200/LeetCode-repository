@@ -1,1 +1,2 @@
+-- Active: 1723216828623@@10.32.214.3724@5432
 SELECT email FROM Person GROUP BY email HAVING COUNT(email) > 1

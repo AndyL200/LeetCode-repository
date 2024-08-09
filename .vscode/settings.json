@@ -1,0 +1,9 @@
+{
+    "C_Cpp.default.compilerPath": "cl.exe",
+    "files.associations": {
+        "format": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "xutility": "cpp"
+    }
+}
