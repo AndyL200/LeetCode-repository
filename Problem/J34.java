@@ -37,22 +37,37 @@ class J34 {
 
     public int[] searchRange(int[] nums, int target) {
         int index = binarySearch(nums, target);
+
         if(index == -1) {return new int[] {-1,-1};}
-        int i = 1, r = 0, l = 0;
-        while(index - i > -1 && nums[index-i] == nums[index]) {
-            l++;
-            i++;
+
+        int r = index, l = index;
+        int i;
+        if(index > 0) {
+
+            i = binarySearch(nums, 0, index-1, target); 
+
+            while(i != -1) {
+                l = i;
+                i = binarySearch(nums, 0, i-1, target); 
+            }
         }
-        i = 1;
-        while(index + i < nums.length && nums[index+i] == nums[index]) { 
-            r++;
-            i++;
+
+        if(index < nums.length-1) {
+
+            i = binarySearch(nums, index+1, nums.length-1,  target);
+
+            while(i != -1) { 
+                r = i;
+                i = binarySearch(nums, i+1, nums.length-1,  target); 
+            }
         }
-        return new int[] {index-l, index+r};
+       
+       
+        return new int[] {l, r};
     }
 
     public static void main(String[] args) {
         J34 hire = new J34();
-        System.out.println(Arrays.toString(hire.searchRange(new int[] {1,2,3}, 1)));
+        System.out.println(Arrays.toString(hire.searchRange(new int[] {1,2,3,3,3,3,4,5,9}, 3)));
     }
 }
