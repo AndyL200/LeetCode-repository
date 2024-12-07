@@ -1,4 +1,5 @@
 
+import java.util.*;
 class J605 {
         public int[] arraySizeMaxing(int[] x, int s) {
             int[] b = new int[x.length+s];
@@ -30,3 +31,4 @@ class J605 {
         System.out.println(hire.canPlaceFlowers(j, 2));
     }
 }
+

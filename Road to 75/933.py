@@ -13,7 +13,7 @@ class RecentCounter(object):
         while self.L[0] < t - 3000: 
             self.L.pop(0)
         return len(self.L)
-                
+
 
 
 # Your RecentCounter object will be instantiated and called as such:
