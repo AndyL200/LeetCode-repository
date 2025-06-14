@@ -1,36 +1,37 @@
 def minWindow(s: str, t: str) -> str:
-    fm_t = {}
+    if t == "": return ""
+
+    countT, window= {}, {}
+
     for c in t:
-        if c in fm_t:
-            fm_t[c] += 1
-        else:
-            fm_t[c] = 1
-    
+        countT[c] = 1 + countT.get(c, 0)
 
-    small = s
-    stack = []
-    def comp(fm):
-        for k in fm_t:
-            if k not in fm or fm[k] < fm_t[k]:
-                return False
-        return True
-    def dfs(i, fm):
-        nonlocal small, stack
-        if comp(fm):
-            if len(stack) < len(small):
-                small = "".join(stack)
-        for j in range(i, len(s)):
-            stack.append(s[j])
-            if s[j] in fm:
-                fm[s[j]] += 1
-            else:
-                fm[s[j]] = 1
-            dfs(i+1,fm)
-            fm[s[j]] -= 1
-            stack.pop()
+    have, need = 0, len(countT)
+    res, resLen = [-1,-1], float("inf")
+    l = 0
+    for r in range(len(s)):
+        c = s[r]
+        window[c] = 1 + window.get(c, 0)
 
-    dfs(0,{})
+        if c in countT and window[c] == countT[c]:
+            have += 1
+        
+        while have == need:
+            #update result
+            if (r - l + 1) < resLen:
+                res = [l, r]
+                resLen = (r - l + 1)
+            #pop from left of window
+            window[s[l]] -= 1
+            if s[l] in countT and window[s[l]] < countT[s[l]]:
+                have -= 1
+            l += 1
+    l, r = res
+    return s[l:r+1] if resLen != float("inf") else ""
 
-    return small
 
-print(minWindow("ADOBECODEBANC", "ABC"))
+
+
+
+
+
